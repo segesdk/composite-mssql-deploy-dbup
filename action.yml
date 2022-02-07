@@ -1,6 +1,9 @@
 name: 'composite-mssql-deploy-dbup'
 description: 'Render variables, substitute variables and invoke DbUp executable'
 inputs:
+  dotnetVersion:
+    description: 'dotNet version. E.g. 6.0.x'
+    required: true
   publishPath:
     description: 'publishing path of the binaries'
     required: true
@@ -19,6 +22,7 @@ inputs:
   dbUpExecutable:
     description: 'Full path to dbUp executable. E.g. ./src/dbup/bin/relase/dbup.exe'
     required: true
+
   
   
 outputs:
@@ -29,6 +33,11 @@ outputs:
 runs:
   using: "composite"
   steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+         dotnet-version: 6.0.x
+
       - name: Set environment specific variables
         uses: jnus/json-variables@4d729bb7248e73b81440da6bee6824e6102d775c
         with:
@@ -42,5 +51,5 @@ runs:
           files: '${{inputs.configurationFile}}'
 
       - name: Execute DbUp
-        run: dotnet src/orbit.DbUp/bin/Debug/net6.0/orbit.DbUp.exe
+        run: dotnet src/orbit.DbUp/bin/Debug/net6.0/orbit.DbUp.dll
         shell: pwsh
