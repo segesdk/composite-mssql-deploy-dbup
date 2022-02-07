@@ -42,5 +42,5 @@ runs:
           files: '${{inputs.configurationFile}}'
 
       - name: Execute DbUp
-        run: ./src/orbit.DbUp/bin/Debug/net6.0/orbit.DbUp.exe
+        run: dotnet src/orbit.DbUp/bin/Debug/net6.0/orbit.DbUp.exe
         shell: pwsh
