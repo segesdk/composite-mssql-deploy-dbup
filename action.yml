@@ -42,5 +42,5 @@ runs:
           files: '${{inputs.configurationFile}}'
 
       - name: Execute DbUp
-        run: ${{dbUpExecutable}}
+        run: ${{inputs.dbUpExecutable}}
         shell: pwsh
