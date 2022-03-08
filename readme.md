@@ -6,6 +6,8 @@ This a composite action wrapping the following functionality
 2. Substitute variables in configuration with microsoft/substitute-variables
 3. Execute DbUp console application.
 
+*Note this action will only run on Linux build runners and that paths are case sensitive*
+
 ## Usage
 
 Reference the composite action with a full sha like the following to avoid breaking changes in the repo:
