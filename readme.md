@@ -14,7 +14,7 @@ Reference the composite action with a full sha like the following to avoid break
 ```yaml
 segesdk/composite-mssql-deploy-dbup@ee83ff39f935503f86aea3ff290f8c1e8a1cdb61
 ```
-or like the following, to always use latest version by referencing @main
+or like the following, to always use latest stable version by referencing @main
 
 ```yaml
 segesdk/composite-mssql-deploy-dbup@main
