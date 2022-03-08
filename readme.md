@@ -42,7 +42,7 @@ segesdk/composite-mssql-deploy-dbup@main
          variableFile: '${{env.PUBLISH_PATH}}/variables.json'
          secrets: '${{ toJson(secrets) }}'
          configurationFile: '${{env.PUBLISH_PATH}}/appsettings.json'
-         dbUpExecutable: ./src/dbup/bin/release/dbup.dll
+         dbUpExecutable: ${{env.PUBLISH_PATH}}/someapp.DbUp.dll
 ```
 
 
