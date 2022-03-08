@@ -22,12 +22,12 @@ segesdk/composite-mssql-deploy-dbup@main
 
 | Input variable | Description |
 |----------|----------|
-| publishPath | Publishing path of the build artifacts |
-| environment | Target environment to deploy to. Used for rendering environment variables and deployment to Azure
+|publishPath | Publishing path of the build artifacts |
+|environment | Target environment to deploy to. Used for rendering environment variables and deployment to Azure
 |variableFile| Full path to json file with variables for rendering with jnus/json-variables|
 |secrets|Serialized json string for github secrets, used to render environment variables. Syntax: `'${{ toJson(secrets) }}'`|
 |configurationFile|Full path to configuration file to perform variable substitution|
-|dbUpExecutable|Name of the target Azure web app|
+|dbUpExecutable|Path to the dbup assembly|
 
 
 ## Usage example
@@ -40,7 +40,7 @@ segesdk/composite-mssql-deploy-dbup@main
          variableFile: '${{env.PUBLISH_PATH}}/variables.json'
          secrets: '${{ toJson(secrets) }}'
          configurationFile: '${{env.PUBLISH_PATH}}/appsettings.json'
-         dbUpExecutable: ./src/dbup/bin/release/dbup.exe
+         dbUpExecutable: ./src/dbup/bin/release/dbup.dll
 ```
 
 
