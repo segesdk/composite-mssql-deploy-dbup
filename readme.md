@@ -10,7 +10,7 @@ This a composite action wrapping the following functionality
 
 Reference the composite action with a full sha like the following to avoid breaking changes in the repo:
 ```yaml
-segesdk/composite-mssql-deploy-dbup@0914465681697fe709557a118d94525546
+segesdk/composite-mssql-deploy-dbup@ee83ff39f935503f86aea3ff290f8c1e8a1cdb61
 ```
 or like the following, to always use latest version by referencing @main
 
@@ -33,7 +33,7 @@ segesdk/composite-mssql-deploy-dbup@main
 ## Usage example
 ```yaml
 - id: Deployment
-       uses: segesdk/composite-mssql-deploy-dbup@0914465681697fe709557a118d945255464c9626
+       uses: segesdk/composite-mssql-deploy-dbup@main
        with:
          publishPath: ${{env.PUBLISH_PATH}}
          environment: Dev
