@@ -36,7 +36,7 @@ runs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-         dotnet-version: 6.0.x
+         dotnet-version: 8.0.x
 
       - name: Set environment specific variables
         uses: jnus/json-variables@4d729bb7248e73b81440da6bee6824e6102d775c
